@@ -98,7 +98,8 @@ Answer : 44<br>
 where uo = exposed areas<br>
 
 <br>
-<b>How many trees are located in exposed areas?</b>
+<b>How many trees are located in exposed areas?</b> <br>
+
 ```sql
 select count(gt.FID) from  gt, uo
 where st_contains(uo.wkb_geometry, gt.wkb_geometry);
