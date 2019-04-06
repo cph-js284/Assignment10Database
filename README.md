@@ -1,6 +1,20 @@
 # Assignment10Database
 This is the 10th. assignment for PBA database soft2019spring
 
+# What it is
+This is a project containing sourcable sql files and MySqldumps for excercise 1 and 2.<br>
+The sourcable sql files are build using Kaspers *makeSQLfile* method from the lecture notes<br>
+<br>
+<b>Tables</b>
+```
+Filename                  Contains
+parksregister.sql         locations of parks  - multipolygon
+uo.sql                    exposed areas       - multipolygon
+gt.sql                    street trees        - point
+cs.sql                    bike racks          - point
+tv.sql                    heavy trafic        - multistring
+```
+<br>
 <b>How many parks are located in exposed areas?</b><br>
 *Testing for overlaps*
 ```sql
@@ -35,3 +49,11 @@ where st_contains(uo.wkb_geometry, gt.wkb_geometry);
 ```
 Answer : 4866<br>
 where gt = street trees and uo = exposed areas<br>
+<br>
+<b>How many bike racks are places along routes for heavy traffic?</b>
+```sql
+```
+Answer : <br>
+where <br>
+
+
