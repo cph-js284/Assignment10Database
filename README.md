@@ -15,8 +15,10 @@ cs.sql                    bike racks          - point
 tv.sql                    heavy trafic        - multistring
 ```
 <br>
-<b>How many parks are located in exposed areas?</b><br>
+<b>How many parks are located in exposed areas?</b> <br>
+
 *Testing for overlaps*<br>
+
 ```sql
 select count(parkregister.areal_id) from  parkregister, uo
 where mbroverlaps(uo.wkb_geometry, parkregister.wkb_geometry);
