@@ -4,7 +4,7 @@ This is the 10th. assignment for PBA database soft2019spring
 # What it is
 This is a project containing sourcable sql files and MySqldumps for excercise 1 and 2.<br>
 The sourcable sql files are built using Kaspers *makeSQLfile* method from the lecture notes<br>
-I have however changed the order of the return parameters in the helper-method
+*I have however changed the order of the return parameters in the helper-method*
 ```
 def transformer(x,y):
     # point is on the form "722942.66 6173097.7"
@@ -25,8 +25,7 @@ tv.sql                    heavy trafic        - multistring
 <br>
 <b>How many parks are located in exposed areas?</b> <br>
 
-*Testing for overlaps*<br>
-
+*Testing for overlaps* 
 ```sql
 select count(parkregister.areal_id) from  parkregister, uo
 where mbroverlaps(uo.wkb_geometry, parkregister.wkb_geometry);
