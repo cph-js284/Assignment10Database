@@ -125,12 +125,12 @@ where cs = bike racks and tv = heavy-traffic<br>
 *notice I change the SRID here. I then create a circle 100m radius around each bike rack, I then calculate if the heavy-traffic-road intersects with the circle*
 
 ```sql
-    select count(csCircle.FID), sum(csCircle.antal_pladser) from
-		(select *, ST_Buffer(ST_GeomFromText(ST_AsText(cs.wkb_geometry), 0), 0.001) as radius from cs) 
-    as csCircle, 
-		(select *, ST_GeomFromText(ST_AsText(tv.wkb_geometry), 0) as road from tv) 
-	as Troads
-	where st_intersects(Troads.road, csCircle.radius);
+select count(csCircle.FID), sum(csCircle.antal_pladser) from
+(select *, ST_Buffer(ST_GeomFromText(ST_AsText(cs.wkb_geometry), 0), 0.001) as radius from cs) 
+as csCircle, 
+(select *, ST_GeomFromText(ST_AsText(tv.wkb_geometry), 0) as road from tv) 
+as Troads
+where st_intersects(Troads.road, csCircle.radius);
 ```
 
 Answer : 2110 racks, 31726 spots<br>
@@ -139,5 +139,6 @@ Answer : 637 racks, 9101 spots<br>
 where cs = bike racks and tv = heavy-traffic<br>
 
 # Database dump
-Included in the repo is a file called *copenhagenDbDump.sql* this is the databasedump containing the copenhagen database that all of the queries have been run against.
+Included in the repo is a file called *copenhagenDbDump.sql* this is the databasedump containing the copenhagen database that all of the queries have been run against.<br>
+*To use this file, copy it into the container and source it from the shell*
 
