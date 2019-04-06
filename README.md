@@ -18,13 +18,50 @@ def transformer(x,y):
 
 ```
 Filename                  Contains
-parksregister.sql         locations of parks  - multipolygon
+parks.sql         locations of parks  - multipolygon
 uo.sql                    exposed areas       - multipolygon
 gt.sql                    street trees        - point
 cs.sql                    bike racks          - point
 tv.sql                    heavy trafic        - multistring
 ```
-<br>
+# Setup
+1) clone the repo
+2) start a docker container running MySql:
+```
+sudo docker run --rm --name mysql01 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass1234 -d mysql
+```
+3) copy the *\*.sql* files into the container
+```
+sudo docker cp ./parks.sql mysql01:/parks.sql
+sudo docker cp ./uo.sql mysql01:/uo.sql
+sudo docker cp ./gt.sql mysql01:/gt.sql
+sudo docker cp ./cs.sql mysql01:/cs.sql
+sudo docker cp ./tv.sql mysql01:/tv.sql
+```
+4) enter the container
+```
+sudo docker exec -it mysql01 bash 
+```
+5) enter MySql
+```
+mysql -u root -ppass1234
+```
+6) create new database (I called this one copenhagen), and switch to newly create database
+```
+create database copenhagen;
+use copenhagen;
+```
+7) source the *\*.sql-files*
+```
+source ./parks.sql;
+source ./uo.sql;
+source ./gt.sql;
+source ./cs.sql;
+source ./tv.sql;
+```
+*This takes care of the setup, you can now run the queries directly in the shell, or copy them into the workbench*
+
+
 <b>How many parks are located in exposed areas?</b> <br>
 
 *Testing for overlaps* 
