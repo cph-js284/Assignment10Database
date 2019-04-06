@@ -61,6 +61,7 @@ source ./tv.sql;
 ```
 *This takes care of the setup, you can now run the queries directly in the shell, or copy them into the workbench*
 
+# Exercise 1
 
 <b>How many parks are located in exposed areas?</b> <br>
 
@@ -104,4 +105,4 @@ where gt = street trees and uo = exposed areas<br>
 Answer : <br>
 where <br>
 
-
+# Exercise 2
