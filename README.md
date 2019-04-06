@@ -110,9 +110,10 @@ where gt = street trees and uo = exposed areas<br>
 
 # Exercise 2
 
+<b>How many bike racks are places along routes for heavy traffic?</b> <br>
+
 <b>The shotgun method aka. the fast and almost-certainly-not-precise-method</b> <br>
 
-<b>How many bike racks are places along routes for heavy traffic?</b>
 ```sql
 select count(cs.FID), sum(cs.antal_pladser)  from cs,tv
 where mbrcontains(tv.wkb_geometry,cs.wkb_geometry)
@@ -133,7 +134,7 @@ where cs = bike racks and tv = heavy-traffic<br>
 ```
 
 Answer : 2110 racks, 31726 spots<br>
-*if the radius is lowered to 25m*
+(*if the radius is lowered to 25m*)<br>
 Answer : 637 racks, 9101 spots<br>
 where cs = bike racks and tv = heavy-traffic<br>
 
