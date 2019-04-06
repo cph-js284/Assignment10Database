@@ -5,6 +5,7 @@ This is the 10th. assignment for PBA database soft2019spring
 This is a project containing sourcable sql files and MySqldumps for excercise 1 and 2.<br>
 The sourcable sql files are built using Kaspers *makeSQLfile* method from the lecture notes<br>
 *I have however changed the order of the return parameters in the helper-method*
+
 ```
 def transformer(x,y):
     # point is on the form "722942.66 6173097.7"
@@ -14,6 +15,7 @@ def transformer(x,y):
 
 <br>
 <b>Tables</b>
+
 ```
 Filename                  Contains
 parksregister.sql         locations of parks  - multipolygon
