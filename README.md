@@ -3,7 +3,15 @@ This is the 10th. assignment for PBA database soft2019spring
 
 # What it is
 This is a project containing sourcable sql files and MySqldumps for excercise 1 and 2.<br>
-The sourcable sql files are build using Kaspers *makeSQLfile* method from the lecture notes<br>
+The sourcable sql files are built using Kaspers *makeSQLfile* method from the lecture notes<br>
+I have however changed the order of the return parameters in the helper-method
+```
+def transformer(x,y):
+    # point is on the form "722942.66 6173097.7"
+    ll = transform(inProj, outProj, x,y)
+    return str(ll[1])+' '+str(ll[0])
+```
+
 <br>
 <b>Tables</b>
 ```
